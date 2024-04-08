@@ -1,0 +1,23 @@
+Sure, let's write a Python function named `extract_timestamps` that accepts an array of orders as input and returns a list of timestamps for each order. 
+
+Let's assume that each order in the array is represented as a dictionary with two keys: 'order_id' and 'timestamp'. Here's the code implementation:
+
+```python
+import datetime
+
+def extract_timestamps(orders):
+    timestamps = []
+
+    for order in orders:
+        try:
+            timestamp = datetime.datetime.strptime(order['timestamp']), '%Y-%m-%d %H:%M:%S')
+            timestamps.append({'order_id': order['order_id']}, timestamp)
+        except ValueError:
+            print("Invalid timestamp format:", order['timestamp'])
+
+    return timestamps
+```
+
+This function iterates over each order in the input array, extracts the timestamp string from the order dictionary, and parses it into a datetime object. If the timestamp is not in the correct format, an exception will be raised and printed to the console. The parsed timestamp objects are then added to a list of dictionaries, where each dictionary contains the order id and its corresponding parsed timestamp.
+
+Note: This implementation assumes that the 'timestamp' key in each order dictionary always has a valid timestamp string value. If this assumption is not valid, additional error handling logic may be required.

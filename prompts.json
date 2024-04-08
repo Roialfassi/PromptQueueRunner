@@ -1,0 +1,122 @@
+[
+  {
+    "title": "Fetch Website Content",
+    "prompt": "Write a function to send a GET request to a website and return the HTML content."
+  },
+  {
+    "title": "Parse HTML for Order Data",
+    "prompt": "Create a function to parse HTML content to extract order data into a structured dictionary."
+  },
+  {
+    "title": "Detect New Orders",
+    "prompt": "Develop a function to identify new orders by comparing scraped data with previously stored data."
+  },
+  {
+    "title": "Store Order Data",
+    "prompt": "Implement a function to store new order data in a local database or a file."
+  },
+  {
+    "title": "Handle Pagination",
+    "prompt": "Write a function to navigate through pagination if the website splits orders across multiple pages."
+  },
+  {
+    "title": "Extract Order Details",
+    "prompt": "Create a function to extract detailed information from each order, such as Order ID, customer name, and price."
+  },
+  {
+    "title": "Log Errors",
+    "prompt": "Develop a function to log any errors encountered during the scraping process."
+  },
+  {
+    "title": "Update Existing Orders",
+    "prompt": "Implement a function to update records in the database if any changes are detected in existing orders."
+  },
+  {
+    "title": "Schedule Scraping Tasks",
+    "prompt": "Write a function to schedule the scraping to run at regular intervals, e.g., every 5 minutes."
+  },
+  {
+    "title": "Validate Scraped Data",
+    "prompt": "Create a function to validate the integrity and completeness of the scraped order data."
+  },
+  {
+    "title": "Remove Duplicate Orders",
+    "prompt": "Develop a function to remove duplicate entries from the scraped data before storing it."
+  },
+  {
+    "title": "Check Website Availability",
+    "prompt": "Implement a function to check if the website is up and accessible before attempting to scrape."
+  },
+  {
+    "title": "Convert Data Formats",
+    "prompt": "Write a function to convert the structured order data into different formats (e.g., JSON, CSV) for various uses."
+  },
+  {
+    "title": "Monitor Website Changes",
+    "prompt": "Create a function to monitor for any changes in the website's layout or order posting format and alert if adjustments are needed."
+  },
+  {
+    "title": "Extract Timestamps",
+    "prompt": "Develop a function to extract and parse the timestamp of each order to track when it was posted."
+  },
+  {
+    "title": "Filter Orders",
+    "prompt": "Implement a function to filter orders based on specific criteria, such as order type or delivery status."
+  },
+  {
+    "title": "Handle Web Login",
+    "prompt": "Write a function to handle login to websites that require authentication to access order information."
+  },
+  {
+    "title": "Calculate Order Totals",
+    "prompt": "Create a function to calculate totals, such as the total number of orders or the total sales value, from the scraped data."
+  },
+  {
+    "title": "Detect Order Status Changes",
+    "prompt": "Develop a function to detect changes in order status (e.g., from 'pending' to 'shipped') and update the records accordingly."
+  },
+  {
+    "title": "Optimize Scraping Efficiency",
+    "prompt": "Implement a function to optimize the scraping process for efficiency, reducing the load on both the server and the local system."
+  },
+  {
+    "title": "Generate Reports",
+    "prompt": "Write a function to generate reports from the scraped order data, summarizing key metrics and trends."
+  },
+  {
+    "title": "Handle Captchas",
+    "prompt": "Create a function to detect and handle captchas or other anti-bot measures encountered during scraping."
+  },
+  {
+    "title": "Archive Old Orders",
+    "prompt": "Develop a function to archive old orders, moving them to a separate storage after a certain period."
+  },
+  {
+    "title": "Notify Users of Updates",
+    "prompt": "Implement a function to notify users or systems through email or webhooks when new orders are scraped and stored."
+  },
+  {
+    "title": "Scrape Using Proxies",
+    "prompt": "Write a function to use proxy servers for scraping to prevent IP blocking by the website."
+  },
+  {
+    "title": "Dynamically Adjust Scraping Intervals",
+    "prompt": "Create a function to dynamically adjust the frequency of scraping tasks based on the volume of new orders detected."
+  },
+  {
+    "title": "Extract and Store Images",
+    "prompt": "Develop a function to extract and store images associated with orders, if any."
+  },
+  {
+    "title": "Implement Retry Logic",
+    "prompt": "Implement a function with retry logic for handling transient errors during the scraping process."
+  },
+  {
+    "title": "Secure Sensitive Information",
+    "prompt": "Write a function to encrypt sensitive order information before storing it to ensure data privacy and security."
+  },
+  {
+    "title": "Optimize Database Queries",
+    "prompt": "Create a function to optimize database queries for fetching, updating, and inserting order data to enhance performance."
+  }
+]

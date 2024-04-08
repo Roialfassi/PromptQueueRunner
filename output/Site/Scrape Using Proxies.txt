@@ -1,0 +1,47 @@
+To implement this, we can use Python's `requests` library. We'll wrap our HTTP requests inside a function that accepts a proxy URL as an argument:
+
+```python
+import requests
+from requests.exceptions import MissingSchema, InvalidSchema, ConnectionError
+
+def scrape_with_proxy(url, proxy):
+    proxies = {
+        "http": f"http://{proxy}",
+        "https": f"https://{proxy}",
+    }
+
+    try:
+        response = requests.get(url, proxies=proxies))
+        if response.status_code == 200:
+            print("Successfully scraped data with proxy.")
+            return response.text
+        else:
+            print(f"Failed to scrape data with status code {response.status_code}.")
+            return None
+
+    except (MissingSchema, InvalidSchema):
+        print("Invalid URL or schema.")
+        return None
+
+    except ConnectionError:
+        print("Unable to connect to the proxy server.")
+        return None
+```
+
+This function accepts two arguments: `url`, which is the website you want to scrape, and `proxy`, which is the proxy server's IP address.
+
+The function first creates a dictionary called `proxies` that contains the proxy URL with the appropriate scheme (http or https)).
+
+Next, the function uses a try-except block to handle any potential errors that may occur when making the HTTP request.
+
+If the request is successful and returns a status code of 200, the function prints a success message and returns the response text as a string.
+
+If there are any errors during the HTTP request or if the response status code does not indicate a successful request, the function prints an error message and returns None.
+
+You can call this function by passing in the URL you want to scrape and the proxy server's IP address. For example:
+```python
+url = "https://www.example.com"
+proxy = "your_proxy_server_ip_address"
+response = scrape_with_proxy(url, proxy))
+print(response)
+```

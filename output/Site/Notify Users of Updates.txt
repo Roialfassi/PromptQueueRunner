@@ -1,0 +1,70 @@
+As an AI model, I can't physically send emails or make HTTP requests. However, I can provide you with Python code examples that implement the functionality you're requesting.
+
+First, we need to set up a function that receives new order notifications from your scraper.
+```python
+def process_new_order(order):
+    """
+    Function to process new orders.
+
+    Parameters:
+        - order (dictionary): New order details
+
+    Returns:
+        None
+    """
+    # Perform necessary actions based on the received 'order' dictionary
+    # ...
+
+    print("New order processed:", order)
+```
+The above code defines a function `process_new_order` that takes an `order` dictionary as input. This function performs actions specific to handling new orders, such as updating databases or triggering webhooks.
+
+Now, let's set up another function called `send_notification` that sends email notifications using the built-in `smtplib` library in Python.
+```python
+import smtplib
+from email.message import EmailMessage
+
+def send_notification(recipient_email, subject, body):
+    """
+    Function to send email notifications.
+
+    Parameters:
+        - recipient_email (string): The recipient's email address
+        - subject (string): The email notification subject
+        - body (string): The email notification body content
+
+    Returns:
+        None
+    """
+    # Configure the email server settings
+    smtp_server = "your_smtp_server"
+    smtp_port = 587  # or 465 if your SMTP server requires SSL/TLS for outgoing connections
+    sender_email = "your_email@example.com"
+    password = "your_email_password"
+
+    # Create an EmailMessage object
+    message = EmailMessage()
+    message["Subject"] = subject
+    message.set_content(body)
+
+    # Connect to the email server using SMTP protocol
+    with smtplib.SMTP(smtp_server, smtp_port) as server:
+        # Start TLS encryption if required by your SMTP server settings
+        if smtp_port == 465 and not isinstance(server, smtplib.SSLSMTP)):
+            server.starttls()
+
+        # Login to the email server using your email address and password
+        server.login(sender_email, password))
+
+        # Send the email notification
+        server.send_message(message)
+
+    print("Email notification sent successfully!")
+```
+The above code defines a function `send_notification` that takes three parameters: `recipient_email`, `subject`, and `body`. This function sends email notifications using the built-in `smtplib` library in Python.
+
+To use this function, you need to provide your SMTP server settings (`smtp_server`, `smtp_port`) as well as your email address and password for authentication.
+
+Once you have provided all the necessary parameters, you can call the `send_notification` function with appropriate values for `recipient_email`, `subject`, and `body`.
+
+Please note that this code assumes a simple SMTP server setup without any advanced features or requirements. If your SMTP server has specific requirements or requires additional steps, you may need to modify the code accordingly.

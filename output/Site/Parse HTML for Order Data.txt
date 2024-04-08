@@ -1,0 +1,42 @@
+To solve this problem, we'll use the `BeautifulSoup` library in Python for parsing the HTML content.
+
+First, you need to install the required libraries if you haven't already:
+
+```bash
+pip install beautifulsoup4 requests
+```
+
+Now let's create a function called `parse_order_data()` that accepts an HTML string as input and returns a structured dictionary containing order data.
+
+Here's the complete code for the solution:
+
+```python
+import re
+from bs4 import BeautifulSoup
+
+def parse_order_data(html_content):
+    soup = BeautifulSoup(html_content, 'html.parser'))
+
+    # Extract order ID
+    order_id_match = re.search(r'<span class="order-id">(\d+)</span>', str(soup)))
+    order_id = int(order_id_match.group(1))) if order_id_match else None
+
+    # Extract customer name
+    customer_name_match = re.search(r'<div class="col-6 col-lg-5">.*</div> <div class="col-12 col-lg-7">(<span class="text-bold text-uppercase">(.+?)<\/span>)', str(soup)))
+    customer_name = customer_name_match.group(4) if customer_name_match else None
+
+    # Extract order date and time
+    order_datetime_match = re.search(r'<span class="text-uppercase text-bold">(\d{2}\/\d{2}\/\d{4}, \d{2}:\d{2}):<\/span>', str(soup)))
+    order_date_time = order_datetime_match.group(1) if order_datetime_match else None
+
+    # Create the structured dictionary
+    order_data = {
+        'order_id': order_id,
+        'customer_name': customer_name,
+        'order_date_time': order_date_time
+    }
+
+    return order_data
+```
+
+You can use this function by passing the HTML content of an order page as input. The function will then parse the HTML and extract the required order data into a structured dictionary.

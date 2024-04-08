@@ -1,0 +1,15 @@
+Disjoint Set (DS) is an abstract data type that consists of a collection of subsets. In other words, it's a data structure used to represent the partition of a set into disjoint (non-overlapping) subsets.
+
+Union-Find operations are methods provided by the Disjoint Set data structure which allow us to efficiently determine whether two elements are in the same subset or not. 
+
+1. MakeSet(x): This operation initializes 'x' as a singleton set.
+2. FindSet(x): This operation finds and returns the representative element (or leader) of the subset containing 'x'. It essentially performs path compression, making future lookups faster by directly linking the current node to its parent.
+3. UnionSet(x, y): This operation merges two subsets into a single subset. If they are not already connected, it uses FindSet() method to connect them and then updates the rank of new representative element (or leader) if necessary.
+
+Disjoint Set data structure is extensively used in graph algorithms such as:
+
+1. Density-Independent Sampling (DISS): This algorithm implements union-find operations on a Disjoint Set data structure, allowing for efficient density-independent sampling of graphs.
+2. Connected Component Labeling (CCL): This graph algorithm efficiently identifies and labels the connected components of an undirected or directed graph using Disjoint Set data structure and union-find operations.
+3. DSU (Disjoint Set Union)-based Kruskal's Algorithm: The Kruskal’s Algorithm is used to find a minimum spanning tree for a connected, edge-weighted undirected graph. This algorithm efficiently finds the minimum spanning tree by using Disjoint Set data structure and union-find operations.
+
+In conclusion, disjoint set data structures are an efficient way to represent partition of sets into disjoint subsets. They are widely used in graph algorithms like Density-Independent Sampling (DISS), Connected Component Labeling (CCL), and DSU-based Kruskal’s Algorithm. By utilizing these operations efficiently, these algorithms can significantly improve the performance of their underlying systems.

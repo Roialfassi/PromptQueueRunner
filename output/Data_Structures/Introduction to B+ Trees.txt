@@ -1,0 +1,11 @@
+B+ tree is a self-balancing search tree data structure that maintains sorted data and allows for efficient insertion, deletion, and search operations.
+
+The structure of a B+ tree consists of nodes that contain keys (values) and pointers to child nodes. The root node contains the maximum number of keys, while other internal nodes may contain fewer keys but twice as many child pointers (to point to the next level)). This balancing factor ensures that every leaf has one less key than its parent (except for the root), maintaining sorted order throughout the tree.
+
+B+ trees are commonly used in databases due to their advantages:
+1. Efficiency: B+ trees provide efficient search, insertion, and deletion operations with a time complexity of O(log n)), where n is the number of nodes in the tree.
+2. Sorted Data: B+ trees maintain sorted data by enforcing a specific order among keys at each node. This property allows for efficient searching.
+3. Dynamic Growth: As data grows, B+ trees can dynamically grow to accommodate more keys without requiring excessive memory allocation.
+4. Compatibility with Filesystems: B+ tree structures are widely used in file systems due to their efficiency and compatibility with various data operations (insertion, deletion, search)).
+
+In summary, B+ trees are efficient, sorted data structures commonly used in databases and file systems for efficient storage and retrieval of data.

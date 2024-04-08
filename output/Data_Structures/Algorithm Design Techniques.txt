@@ -1,0 +1,21 @@
+Algorithm Design Techniques: A Brief Overview
+
+1. Brute Force Approach: This technique involves trying every possible solution until the correct one is found. It's often simple and intuitive, but it can be highly inefficient for complex problems or large datasets.
+
+   Trade-offs:
+   - Requires a lot of memory to store intermediate solutions.
+   - Can result in exponential time complexity, which becomes quickly impractical as problem size increases.
+
+2. Recursive Approach: This technique involves breaking down the problem into smaller subproblems and solving each subproblem recursively. It's often used for problems that have a tree or graph structure.
+
+   Trade-offs:
+   - Requires careful coding to avoid infinite recursion or excessive memory usage due to function call stack overflow.
+   - Can lead to performance issues, especially for large datasets, as the number of recursive calls grows exponentially with problem size.
+
+3. Iterative Approach: This technique involves using loops to repeatedly execute a set of instructions until a certain condition is met. It's often used for problems that have a linear or sequential structure.
+
+   Trade-offs:
+   - Requires careful coding to avoid infinite loops or excessive memory usage due to loop counter overflow.
+   - Can lead to performance issues, especially for large datasets, as the number of iterations grows linearly with problem size.
+
+In conclusion, each algorithm design technique has its own set of trade-offs that need to be carefully considered when choosing the appropriate technique for a particular problem.

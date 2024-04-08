@@ -1,0 +1,11 @@
+Hashing is a technique used in computer science to map data onto fixed-size keys, called hash values or hash codes. These keys are typically used to index into an array, where the corresponding value can be found.
+
+A hash table is a data structure that uses a hash function to store and retrieve key-value pairs. Hash tables provide efficient data retrieval because the time complexity of searching for a specific key in a hash table is O(1) on average.
+
+To handle collisions, which occur when two different inputs produce the same output from the hash function, there are several techniques that can be used:
+
+1. Separate Chaining: Each slot in the hash table points to a linked list of elements that have been hashed to the same index. When a collision occurs, the new element is added to the end of the linked list. This allows for efficient retrieval of all elements with the same key by traversing the linked list.
+
+2. Open Addressing: In this technique, when a collision occurs, the hash function is applied again to find an alternate index in the array where the collided element can be stored. The process continues until an empty slot is found. This approach helps minimize collisions and achieve efficient data retrieval.
+
+In summary, hashing is a technique used to map data onto fixed-size keys, while hash tables are a specific type of hash table that uses a hash function to store and retrieve key-value pairs efficiently. Hash functions transform input data into smaller outputs, known as hash values or hash codes. These hash values are then used as indices in an array where the corresponding value can be found.

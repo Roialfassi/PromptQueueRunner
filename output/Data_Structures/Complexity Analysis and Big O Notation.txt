@@ -1,0 +1,16 @@
+Complexity Analysis, also known as Time and Space Complexity, is an essential concept in software development. It helps us understand how the performance (speed) and memory usage of our code changes as we scale or modify the algorithm used.
+
+Big O notation is a way to express the time complexity of an algorithm. It describes how the running time of an algorithm grows as the size of the input increases. 
+
+The most common Big O notations are:
+- O(1) - Constant Time Complexity - The running time of the algorithm does not depend on the size of the input. Examples include accessing a specific element in an array or dictionary, performing a simple arithmetic operation.
+- O(n) - Linear Time Complexity - The running time of the algorithm grows linearly with the size of the input. Examples include iterating over each element in an array or list, performing a simple iteration over a collection of elements.
+- O(log n) - Logarithmic Time Complexity - The running time of the algorithm grows logarithmically with the size of the input. Examples include binary search, merge sort, quicksort, etc.
+- O(sqrt(n)) - Square Root Time Complexity - The running time of the algorithm grows as the square root of the size of the input. Examples include linear search (which has a worst case time complexity of O(n) and can be improved to have a time complexity of O(log n), using binary search)).
+- O(n^2) - Quadratic Time Complexity - The running time of the algorithm grows quadratically with the size of the input. Examples include nested loops, bubble sort, insertion sort, selection sort, etc.
+
+To evaluate the efficiency of algorithms, we need to analyze their time complexity using Big O notation. 
+
+Once we have determined the time complexity of an algorithm, we can compare it to other algorithms based on their time complexities.
+
+The most important thing is to ensure that our algorithms are efficient and able to handle large inputs without consuming excessive resources.

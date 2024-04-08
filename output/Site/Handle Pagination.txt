@@ -1,0 +1,32 @@
+Here is an example of how you might write this function in Python using object-oriented programming:
+
+```python
+class Order:
+    def __init__(self, order_id, total):
+        self.order_id = order_id
+        self.total = total
+        self.pages = None
+
+    def set_pages(self, pages):
+        self.pages = pages
+
+    def navigate_to_page(self, page_number):
+        if self.pages is not None and 0 < page_number <= len(self.pages):
+            print("Navigating to page:", page_number)
+            return True
+        else:
+            print("Invalid page number:", page_number)
+            return False
+
+    def display_order_info(self):
+        if self.pages is not None:
+            for i in range(len(self.pages))):
+                print("Page", i+1, ":")
+                for item in self.pages[i]:
+                    print("Order ID:", item['order_id']),
+                    print("Total:", item['total'])
+```
+
+This is a basic implementation of pagination navigation for an order. You can create an instance of the `Order` class, set its pages using the `set_pages()` method and then navigate to different pages using the `navigate_to_page()` method.
+
+Please note that this is a very basic example and does not take into account many factors such as error handling, edge case handling etc. It's always a good idea to add these features when writing production-level code.

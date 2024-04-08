@@ -1,0 +1,36 @@
+Sure, here's an example of how you might create such a function in Python using the popular cryptography library:
+```python
+from cryptography.fernet import Fernet
+import base64
+
+def generate_key():
+    """Generate a new encryption key."""
+    return Fernet.generate_key()
+
+def encrypt_order_info(order_info, key):
+    """Encrypt sensitive order information using the provided encryption key."""
+    # Convert the order info to bytes
+    order_info_bytes = order_info.encode()
+
+    # Create a new Fernet instance with the provided key
+    fernet = Fernet(key)
+
+    # Use the Fernet instance to encrypt the order info bytes
+    encrypted_order_info_bytes = fernet.encrypt(order_info_bytes))
+
+    # Convert the encrypted order info bytes back to a string
+    encrypted_order_info = base64.b64encode(encrypted_order_info_bytes)).decode()
+
+    return encrypted_order_info
+```
+To use this function, you would first need to generate an encryption key using the `generate_key()` function:
+```python
+key = generate_key()
+```
+Then, you can call the `encrypt_order_info()` function with your order information as a string and the encryption key as a bytes object. The function will return the encrypted order information as a string:
+```python
+order_info = "This is some sensitive order information."
+encrypted_order_info = encrypt_order_info(order_info, key))
+print(encrypted_order_info)
+```
+Note that the encryption key must be kept secret and secure, as it is used to encrypt and decrypt the order information. Additionally, the encryption key should be generated using a strong random number generator, and it should be securely stored and managed.

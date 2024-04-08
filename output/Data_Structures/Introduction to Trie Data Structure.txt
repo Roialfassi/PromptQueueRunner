@@ -1,0 +1,12 @@
+A Trie (also called digital tree) is a kind of search tree—an ordered tree data structure that is used to store a dynamic set or associative array where the keys are usually strings.
+
+Here's how it works:
+1. Each node in the Trie represents a single character.
+2. The path from the root to any node forms a string, which is the key associated with that value.
+3. To search for a word in the Trie, we start at the root of the Trie and follow the edges labeled with each character in the word. If we reach a leaf node (i.e., a node with no children) that corresponds to the given word, then the word is present in our dynamic set or associative array.
+
+In terms of applications:
+1. Word searches: A Trie data structure can be used for fast searching and retrieval of words from a large collection.
+2. Auto-completion features: Another application of the Trie data structure is its use in implementing auto-completion features in user interfaces. For example, in an online text editor or IDE, as a user types a query, the system can retrieve relevant suggestions from a Trie data structure.
+
+In summary, a Trie (or digital tree) is a powerful data structure that allows for efficient searching and retrieval of words in dynamic sets or associative arrays. Its applications include word searches, auto-completion features, and more.

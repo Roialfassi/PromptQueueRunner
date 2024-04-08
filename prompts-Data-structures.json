@@ -1,0 +1,122 @@
+[
+  {
+    "title": "Introduction to Data Structures",
+    "prompt": "Explain the concept of data structures and why they are crucial for efficient algorithm design and implementation."
+  },
+  {
+    "title": "Understanding Arrays",
+    "prompt": "Describe arrays, their memory allocation, and their role as the building block for other data structures."
+  },
+  {
+    "title": "Exploring Stacks",
+    "prompt": "Introduce stacks, their LIFO nature, basic operations (push, pop, peek), and practical applications."
+  },
+  {
+    "title": "Implementing Queues",
+    "prompt": "Discuss queues, their FIFO characteristic, operations (enqueue, dequeue), and variants like circular queues."
+  },
+  {
+    "title": "Diving into Linked Lists",
+    "prompt": "Cover the fundamentals of linked lists, differences between singly and doubly linked lists, and their use-cases."
+  },
+  {
+    "title": "Mastering Sorting Algorithms",
+    "prompt": "Introduce basic sorting algorithms (bubble, selection, insertion) and discuss their time complexities."
+  },
+  {
+    "title": "Advanced Sorting Techniques",
+    "prompt": "Explore advanced sorting algorithms (merge, quick, heap sort) and their efficiency in different scenarios."
+  },
+  {
+    "title": "Understanding Hashing",
+    "prompt": "Explain the concept of hashing, hash tables, hash functions, and handling collisions for efficient data retrieval."
+  },
+  {
+    "title": "Binary Trees Basics",
+    "prompt": "Introduce binary trees, tree traversal algorithms (inorder, preorder, postorder), and applications."
+  },
+  {
+    "title": "Binary Search Trees (BST)",
+    "prompt": "Discuss the properties of BSTs, operations (insertion, deletion, search), and their complexity."
+  },
+  {
+    "title": "Balancing Trees: AVL Trees",
+    "prompt": "Explain AVL trees, their balance factor, rotations for maintaining balance, and insertion/deletion complexities."
+  },
+  {
+    "title": "Understanding Red-Black Trees",
+    "prompt": "Cover the basics of red-black trees, their properties, and the rules for insertion and deletion."
+  },
+  {
+    "title": "Introduction to B+ Trees",
+    "prompt": "Describe B+ trees, their structure, why they are used in databases and filesystems, and their operations."
+  },
+  {
+    "title": "Graphs Fundamentals",
+    "prompt": "Introduce the concept of graphs, terminology (vertices, edges), types (directed, undirected), and representations."
+  },
+  {
+    "title": "Graph Traversal Techniques",
+    "prompt": "Explain graph traversal algorithms (BFS, DFS) and their applications in solving computational problems."
+  },
+  {
+    "title": "Shortest Path Algorithms",
+    "prompt": "Discuss algorithms for finding the shortest path in a graph (Dijkstra’s, Bellman-Ford) and their use cases."
+  },
+  {
+    "title": "Understanding Dynamic Programming",
+    "prompt": "Introduce dynamic programming, its principle of optimality, and solving problems with overlapping subproblems."
+  },
+  {
+    "title": "Greedy Algorithms Basics",
+    "prompt": "Explain the concept of greedy algorithms, their application in optimization problems, and examples."
+  },
+  {
+    "title": "Divide and Conquer Strategy",
+    "prompt": "Discuss the divide and conquer approach with examples like merge sort and quick sort, and its efficiency."
+  },
+  {
+    "title": "Backtracking Algorithms",
+    "prompt": "Introduce backtracking, its application in solving puzzles like Sudoku, and the N queens problem."
+  },
+  {
+    "title": "Graph Coloring Problem",
+    "prompt": "Explain the graph coloring problem, its applications, and approaches to solving it."
+  },
+  {
+    "title": "Hamiltonian and Eulerian Paths",
+    "prompt": "Discuss Hamiltonian and Eulerian paths and cycles in graphs, their differences, and how to find them."
+  },
+  {
+    "title": "Minimum Spanning Trees",
+    "prompt": "Cover the concept of minimum spanning trees and algorithms to find them (Kruskal’s, Prim’s)."
+  },
+  {
+    "title": "Max Flow Problem",
+    "prompt": "Introduce the max flow problem, its significance in network design, and algorithms like Ford-Fulkerson."
+  },
+  {
+    "title": "String Matching Algorithms",
+    "prompt": "Discuss algorithms for string matching and searching within text (naive, KMP, Rabin-Karp)."
+  },
+  {
+    "title": "Data Structures for Disjoint Sets",
+    "prompt": "Explain disjoint set data structures, union-find operations, and their application in graph algorithms."
+  },
+  {
+    "title": "Introduction to Trie Data Structure",
+    "prompt": "Describe trie data structure, its applications in word searches and auto-completion features."
+  },
+  {
+    "title": "Understanding Heaps and Priority Queues",
+    "prompt": "Explain heaps, their operations, and how they are used to implement priority queues."
+  },
+  {
+    "title": "Complexity Analysis and Big O Notation",
+    "prompt": "Introduce complexity analysis, Big O notation, and how to evaluate the efficiency of algorithms."
+  },
+  {
+    "title": "Algorithm Design Techniques",
+    "prompt": "Discuss various algorithm design techniques (brute force, recursive, iterative) and their trade-offs."
+  }
+]

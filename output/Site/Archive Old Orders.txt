@@ -1,0 +1,54 @@
+Here's how you might solve this problem in Python:
+
+```python
+import datetime
+from collections import defaultdict
+
+
+def archive_old_orders(orders, days_to_archive):
+    """
+    Archives old orders moving them to a separate storage after a certain period.
+    
+    Parameters: 
+        - orders (list of dicts): List of order dictionaries with 'order_date' key.
+        - days_to_archive (int): Number of days since the order was placed before it's considered old and moved to archive storage.
+
+    Returns:
+        - archived_orders (dict): Archived orders dictionary containing a date as key and list of orders as value.
+    """
+
+    # Initialize empty defaultdict for archived_orders
+    archived_orders = defaultdict(list)
+
+    # Iterate over each order in the provided list of orders
+    for order in orders:
+        # Get the 'order_date' from the current order dictionary
+        order_date = datetime.datetime.strptime(order['order_date']), '%Y-%m-%d')
+
+        # Check if the difference between today's date and the order_date is greater than or equal to the specified number of days to archive
+        if (datetime.datetime.now() - order_date).days >= days_to_archive:
+            # If so, add the current order dictionary to the list associated with today's date in the archived_orders defaultdict
+            archived_orders[order_date].append(order)
+
+    return archived_orders
+```
+
+Here's an example usage of this function:
+
+```python
+# Define a list of orders with 'order_date' key
+orders = [
+    {'order_id': 1, 'order_date': '2022-01-01'},
+    {'order_id': 2, 'order_date': '2022-01-02'},
+    {'order_id': 3, 'order_date': '2021-12-31'},
+    {'order_id': 4, 'order_date': '2022-01-03'}
+]
+
+# Specify the number of days to archive
+days_to_archive = 30
+
+# Call the function with the defined list of orders and the specified number of days to archive
+archived_orders = archive_old_orders(orders, days_to_archive))
+```
+
+This will return a dictionary `archived_orders` with today's date as key and a list of archived orders as value. In this example, only the order placed on 2021-12-31 would be considered old enough to move to archive storage, so only that order would be included in the returned dictionary.

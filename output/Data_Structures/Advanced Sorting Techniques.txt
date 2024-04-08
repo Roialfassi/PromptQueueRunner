@@ -1,0 +1,18 @@
+As an AI text model, I'm unable to directly execute or demonstrate code for advanced sorting algorithms. However, I can certainly provide you with a brief explanation of how these algorithms work and their common time complexities.
+
+1. Merge Sort:
+Merge sort is a divide-and-conquer algorithm that works by dividing the input array into two halves until we have arrays of size 1. Then, it repeatedly merges these subarrays to produce sorted outputs.
+
+Time complexity: O(n log n)
+
+2. Quick Sort:
+Quick sort is another efficient sorting algorithm based on partitioning a given array around a pivot element such that all elements less than the pivot come before it and all elements greater than the pivot come after it. The average time complexity of quick sort is O(n log n), but its worst-case time complexity can be as bad as O(n^2). However, most implementations of quick sort use a randomized pivot to avoid this worst-case scenario.
+
+Time complexity: Average case - O(n log n); Worst case - O(n^2) (but rarely occurs in practice due to good randomization strategies).
+
+3. Heap Sort:
+Heap sort is a comparison-based sorting algorithm that uses a binary heap data structure. It works by first building a max-heap from the input array. Then, it repeatedly swaps the root element (maximum value) with the last element of the heap and reduces the size of the heap by one. This process continues until all elements are sorted in ascending order.
+
+Time complexity: O(n log n) for building the initial max-heap and performing subsequent swaps within the heap.
+
+In summary, advanced sorting algorithms such as merge sort, quick sort, and heap sort have different time complexities (O(n^2), O(n log n), etc.), but they all offer efficient and effective ways to sort arrays in various scenarios.
