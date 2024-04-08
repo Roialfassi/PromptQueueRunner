@@ -57,4 +57,4 @@ def process_prompts_from_json(prompts_file, credentials_file="credentials.json" 
 
 
 if __name__ == "__main__":
-    process_prompts_from_json("prompts-Data-structures.json")
+    process_prompts_from_json("prompts.json" , role= "You are the best story teller in the world")
