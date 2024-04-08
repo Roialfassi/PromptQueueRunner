@@ -1,9 +1,0 @@
-Backtracking is an algorithmic technique that consists of building candidates towards the solutions, and abandoning a candidate as soon as it's determined that the candidate cannot possibly be extended to a valid solution.
-
-The backtracking algorithm can be applied to various problems like the Sudoku problem and the N Queens Problem.
-
-For example: The Sudoku problem involves filling a 9x9 grid with digits from 1 to 9 without any conflicts. Each row, each column, and each of the nine 3x3 sub-grids that compose the grid must contain all of the digits from 1 to 9 exactly once.
-
-The backtracking algorithm works by first generating a candidate solution (i.e., a partially filled Sudoku grid). It then checks if this candidate is valid (i.e., it conforms to the rules of the Sudoku problem). If the candidate is valid, the algorithm proceeds to generate more candidates by filling in the next empty cell of the Sudoku grid. This process continues until either all cells of the Sudoku grid have been filled in successfully, or else it is determined that there are no more possible solutions to the Sudoku problem (i.e., the backtracking algorithm has exhausted all possible candidates and therefore cannot generate a valid solution)).
-
-In summary: Backtracking is an algorithmic technique used for solving problems like Sudoku, N Queens Problem etc. It works by generating candidates and checking their validity. If a candidate is found to be invalid, it is abandoned, and the next possible candidate is generated. This process continues until all cells of the grid have been filled in successfully or else all possible candidates have been exhausted.

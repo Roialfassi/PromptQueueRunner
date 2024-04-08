@@ -1,9 +1,0 @@
-A greedy algorithm is one that makes the locally optimal choice at each stage with the hope of finding a global optimum. The algorithm makes choices based on immediate reward without considering the future consequences of these choices.
-
-Greedy algorithms are commonly used in optimization problems to find near-optimal solutions. Optimization problems involve finding the best or most desirable outcome among several options, given certain constraints and objectives.
-
-One classic example of a greedy algorithm is Dijkstra's algorithm for finding the shortest path between two nodes in a weighted graph. The algorithm uses a priority queue to select the closest unvisited node at each step, and updates the distances from the starting node to all other nodes using the weights of the edges.
-
-Another example of a greedy algorithm is the Fractional Knapsack Problem, which involves selecting items with given weights and values to maximize the total value of the selected items, subject to a constraint on the total weight of the selected items. The algorithm iteratively selects the item with the maximum value-to-weight ratio that still fits within the capacity constraint, until all items have been considered.
-
-Greedy algorithms have their limitations however. While they can provide near-optimal solutions in many optimization problems, they may not always produce the best possible solution due to their focus on immediate reward rather than considering future consequences of choices.
