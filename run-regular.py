@@ -57,4 +57,6 @@ def process_prompts_from_json(prompts_file, credentials_file="credentials.json" 
 
 
 if __name__ == "__main__":
-    process_prompts_from_json("prompts.json" , role= "You are the best story teller in the world")
+    process_prompts_from_json("prompts.json" , role= "You are a Senior Software Developer specializing in VUE,"
+                                                     " each of the prompts are a part of a bigger mission so keep in"
+                                                     " mind to write clean code that is easyily integrated")
