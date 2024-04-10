@@ -1,12 +1,12 @@
 import os
 import datetime
 import subprocess
+from PromptQueueRunner import process_prompts_from_json
 
-
-def run_prompt_queue_runner(input_folder, output_folder, model, role):
+def run_prompt_queue_runner(input_folder, output_folder, model, role , credentials_file="credentials.json"):
     # Get the current date in the format ddmmyyyy
     today = datetime.date.today().strftime("%d%m%Y")
-    output_folder = os.path.join(output_folder, today, model)
+    output_folder = os.path.join(output_folder, today, model.split("/")[-1])
     os.makedirs(output_folder, exist_ok=True)
 
     # Loop through all JSON files in the input folder
@@ -18,14 +18,15 @@ def run_prompt_queue_runner(input_folder, output_folder, model, role):
             os.makedirs(output_subfolder, exist_ok=True)
 
             # Run the PromptQueueRunner script with the current JSON file
-            subprocess.run(["python", "PromptQueueRunner.py", "-p", input_file, "-o", output_folder, "-t", output_subfolder, "-s", role], check=True)
-
+            # subprocess.run(["python", "PromptQueueRunner.py", "-p", input_file, "-o", output_folder, "-t", output_subfolder, "-s", role], check=True)
+            process_prompts_from_json(input_file, output_folder, output_subfolder , role , credentials_file= credentials_file)
             print(f"Output saved to {output_subfolder}")
 
 
 if __name__ == "__main__":
     input_fold = r"\Prompts"
     output_fold = r"\Output"
-    model_name = "brittlewis12/gemma-2b-GGUF/gemma-2b.Q8_0.gguf"
+    model_name = "lmstudio-ai/gemma-2b-it-GGUF/gemma-2b-it-q8_0.gguf"
     role = "You are a helpful assistant."
-    run_prompt_queue_runner(input_fold, output_fold ,model_name, role)
+    credentials="credentials.json"
+    run_prompt_queue_runner(input_fold, output_fold ,model_name, role , credentials)
