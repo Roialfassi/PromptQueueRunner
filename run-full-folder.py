@@ -24,8 +24,8 @@ def run_prompt_queue_runner(input_folder, output_folder, model, role):
 
 
 if __name__ == "__main__":
-    input_fold = "input_jsons"
-    output_fold = "output"
-    model_name = "llama"
+    input_fold = r"\Prompts"
+    output_fold = r"\Output"
+    model_name = "brittlewis12/gemma-2b-GGUF/gemma-2b.Q8_0.gguf"
     role = "You are a helpful assistant."
-    run_prompt_queue_runner(input_fold, output_fold , role)
+    run_prompt_queue_runner(input_fold, output_fold ,model_name, role)
