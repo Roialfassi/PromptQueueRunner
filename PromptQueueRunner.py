@@ -18,7 +18,8 @@ def sanitize_filename(title):
     return sanitized
 
 
-def query_llm_and_save(prompt, title, output_folder, topic, system_role, credentials_file="credentials.json"):
+def query_llm_and_save(prompt, title, output_folder, topic, system_role, credentials_file="credentials.json",
+                       model="Loaded from Chat UI"):
     # Load credentials from JSON file
     credentials = load_credentials(credentials_file)
 
@@ -27,7 +28,7 @@ def query_llm_and_save(prompt, title, output_folder, topic, system_role, credent
     client = OpenAI(base_url=credentials["base_url"], api_key=credentials["api_key"])
 
     completion = client.chat.completions.create(
-        model="Loaded from Chat UI",
+        model=model,
         messages=[
             {"role": "system", "content": system_role},
             {"role": "user", "content": prompt}
@@ -52,14 +53,15 @@ def query_llm_and_save(prompt, title, output_folder, topic, system_role, credent
     print(f"Response saved to {output_file}")
 
 
-def process_prompts_from_json(prompts_file, output_folder, topic, system_role, credentials_file="credentials.json"):
+def process_prompts_from_json(prompts_file, output_folder, topic, system_role, credentials_file="credentials.json",
+                              model="Loaded from Chat UI"):
     with open(prompts_file, "r") as f:
         prompts_data = json.load(f)
 
     for prompt_data in prompts_data:
         prompt = prompt_data["prompt"]
         title = prompt_data["title"]
-        query_llm_and_save(prompt, title, output_folder, topic, system_role, credentials_file)
+        query_llm_and_save(prompt, title, output_folder, topic, system_role, credentials_file,model)
 
 
 if __name__ == "__main__":
@@ -72,7 +74,9 @@ if __name__ == "__main__":
                         help="Topic subfolder within the output folder (default: general)")
     parser.add_argument("-s", "--system", default="I want you to act like a Senior Software Developer",
                         help="System role (instructions for the LLM)")
+    parser.add_argument("-m", "--model", default="Loaded from Chat UI",
+                        help="System role (instructions for the LLM)")
 
     args = parser.parse_args()
 
-    process_prompts_from_json(args.prompts, args.output, args.topic, args.system, args.credentials)
+    process_prompts_from_json(args.prompts, args.output, args.topic, args.system, args.credentials, args.model)
