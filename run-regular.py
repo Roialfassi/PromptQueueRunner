@@ -9,7 +9,9 @@ def load_credentials(credentials_file):
     return credentials
 
 
-def query_llm_and_save(prompt, title, credentials_file="credentials.json", role="I want you to act like a Senior Software Developer", model="TheBloke/CodeLlama-7B-Instruct-GGUF/codellama-7b-instruct.Q4_K_S.gguf" ):
+def query_llm_and_save(prompt, title, credentials_file="credentials.json",
+                       role="I want you to act like a Senior Software Developer",
+                       model="TheBloke/CodeLlama-7B-Instruct-GGUF/codellama-7b-instruct.Q4_K_S.gguf"):
     # Load credentials from JSON file
     credentials = load_credentials(credentials_file)
 
@@ -46,19 +48,21 @@ def load_credentials(credentials_file):
     return credentials
 
 
-def process_prompts_from_json(prompts_file, credentials_file="credentials.json" , role="I want you to act like a Senior Software Developer"
-                              ,model="TheBloke/CodeLlama-7B-Instruct-GGUF/codellama-7b-instruct.Q4_K_S.gguf" ):
+def process_prompts_from_json(prompts_file, credentials_file="credentials.json",
+                              role="I want you to act like a Senior Software Developer"
+                              , model="TheBloke/CodeLlama-7B-Instruct-GGUF/codellama-7b-instruct.Q4_K_S.gguf"):
     with open(prompts_file, "r") as f:
         prompts_data = json.load(f)
 
     for prompt_data in prompts_data:
         prompt = prompt_data["prompt"]
         title = prompt_data["title"]
-        query_llm_and_save(prompt, title, credentials_file=credentials_file, role=role, model = model)
+        query_llm_and_save(prompt, title, credentials_file=credentials_file, role=role, model=model)
 
 
 if __name__ == "__main__":
     the_model = "TheBloke/CodeLlama-7B-Instruct-GGUF/codellama-7b-instruct.Q4_K_S.gguf"
-    process_prompts_from_json("prompts.json" , role= "You are a Senior Software Developer specializing in Python,"
-                                                     " each of the prompts are a part of a bigger mission so keep in"
-                                                     " mind to write clean code that is easily integrated" , model = the_model)
+    process_prompts_from_json("prompts.json", role="You are a Senior Software Developer specializing in Python,"
+                                                   " each of the prompts are a part of a bigger mission so keep in"
+                                                   " mind to write clean code that is easily integrated",
+                              model=the_model)
