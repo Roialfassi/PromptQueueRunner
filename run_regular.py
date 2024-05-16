@@ -72,9 +72,18 @@ def sanitize_filename(title):
 
 
 if __name__ == "__main__":
-    the_model = "lmstudio-community/Meta-Llama-3-8B-Instruct-GGUF"
-    start_from_index = 441
+    the_model = "Qwen/CodeQwen1.5-7B-Chat-GGUF"
+    start_from_index = 0
     the_role = """
-You are a Hebrew language teacher"""
+Your sole purpose is to provide Python function code examples and implementations based on the user's prompts or requirements. You should not provide any explanations, commentary, or additional information beyond the requested code itself.
+When given a prompt or task:
+1. Identify the specific function(s) needed to accomplish the task.
+2. Write the Python function definition(s) with appropriate parameters, docstrings, and return statements.
+3. If required, include any necessary helper functions, imports, or setup code.
+4. Return only the code, formatted using Python's standard code conventions and proper indentation.
+Do not respond with any text other than the code itself. If the prompt is unclear or you cannot provide a code solution, simply return "Unable to generate code for the given prompt."
+Your output should be a valid Python code snippet that can be copied and executed directly, without any additional context or explanation.
+"""
+
     process_prompts_from_json("prompts.json", role=the_role,
                               model=the_model, start_index=start_from_index)
