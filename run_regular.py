@@ -1,5 +1,7 @@
 import os
 import json
+import string
+
 from openai import OpenAI
 
 
@@ -35,7 +37,8 @@ def query_llm_and_save(prompt, title, credentials_file="credentials.json",
     os.makedirs(output_dir, exist_ok=True)
 
     # Save the response to a .txt file
-    output_file = os.path.join(output_dir, f"{title}.md")
+    new_title = sanitize_filename(title)
+    output_file = os.path.join(output_dir, f"{new_title}.md")
     with open(output_file, "w", encoding="utf-8-sig") as f:
         f.write(response)
 
@@ -61,10 +64,17 @@ def process_prompts_from_json(prompts_file, credentials_file="credentials.json",
         query_llm_and_save(prompt, title, credentials_file=credentials_file, role=role, model=model)
 
 
+def sanitize_filename(title):
+    valid_chars = "-_.() %s%s" % (string.ascii_letters, string.digits)
+    sanitized = ''.join(c for c in title if c in valid_chars)
+    sanitized = sanitized.replace(' ', '_')
+    return sanitized
+
+
 if __name__ == "__main__":
     the_model = "lmstudio-community/Meta-Llama-3-8B-Instruct-GGUF"
-    start_from_index = 170
+    start_from_index = 441
     the_role = """
 You are a Hebrew language teacher"""
     process_prompts_from_json("prompts.json", role=the_role,
-                              model=the_model, start_index= start_from_index)
+                              model=the_model, start_index=start_from_index)
