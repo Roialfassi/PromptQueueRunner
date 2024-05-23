@@ -35,6 +35,7 @@ Create a JSON file (e.g., prompts.json) containing an array of prompt and title 
 ]
 ```
 Open a terminal or command prompt and navigate to the project directory.
+Open venv install requirements and then
 Run the script with the following command:
 ```bash
 python PromptQueueRunner.py -p prompts.json
