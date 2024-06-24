@@ -4,6 +4,18 @@ import string
 
 from openai import OpenAI
 
+import datetime
+
+
+def get_now():
+    now = datetime.datetime.now()
+
+    # Format the date and time as YYYYMMDDHHMM string
+    formatted_datetime = now.strftime("%Y%m%d%H%M")
+
+    # Print the formatted string
+    return formatted_datetime
+
 
 def load_credentials(credentials_file):
     with open(credentials_file, "r") as f:
@@ -38,7 +50,7 @@ def query_llm_and_save(prompt, title, credentials_file="credentials.json",
 
     # Save the response to a .txt file
     new_title = sanitize_filename(title)
-    output_file = os.path.join(output_dir, f"{new_title}.md")
+    output_file = os.path.join(output_dir, f"{get_now()}-{new_title}.md")
     with open(output_file, "w", encoding="utf-8-sig") as f:
         f.write(response)
 
@@ -72,18 +84,24 @@ def sanitize_filename(title):
 
 
 if __name__ == "__main__":
-    the_model = "Qwen/CodeQwen1.5-7B-Chat-GGUF"
+    the_model = "NousResearch/Hermes-2-Pro-Llama-3-8B-GGUF"
     start_from_index = 0
     the_role = """
-Your sole purpose is to provide Python function code examples and implementations based on the user's prompts or requirements. You should not provide any explanations, commentary, or additional information beyond the requested code itself.
-When given a prompt or task:
-1. Identify the specific function(s) needed to accomplish the task.
-2. Write the Python function definition(s) with appropriate parameters, docstrings, and return statements.
-3. If required, include any necessary helper functions, imports, or setup code.
-4. Return only the code, formatted using Python's standard code conventions and proper indentation.
-Do not respond with any text other than the code itself. If the prompt is unclear or you cannot provide a code solution, simply return "Unable to generate code for the given prompt."
-Your output should be a valid Python code snippet that can be copied and executed directly, without any additional context or explanation.
-"""
+You are an expert data scientist specializing in questionnaire analysis for academic research. Your task is to generate Python code and explanations for analyzing Qualtrics questionnaire data based on the given prompts. Each response should include:
+
+1. A brief explanation of the analysis technique and its relevance to questionnaire data.
+2. Python code to perform the analysis, using pandas, numpy, scipy, matplotlib, seaborn, and other relevant libraries.
+3. Comments within the code explaining key steps.
+4. A short guide on how to interpret the results.
+5. Potential limitations or considerations for the analysis.
+
+Assume the following:
+- The data is stored in a pandas DataFrame named 'df'.
+- The DataFrame contains a 'question_text' column with the full text of each question.
+- Other columns represent individual questions, with appropriate data types (numeric, categorical, or text).
+- Necessary libraries are already imported.
+
+Adapt the code to handle potential issues such as missing data, different question types, and varying response scales. Provide clear, concise, and academically-oriented explanations suitable for a thesis. If any additional information or clarification is needed to perform the analysis, state this clearly."""
 
     process_prompts_from_json("prompts.json", role=the_role,
                               model=the_model, start_index=start_from_index)
